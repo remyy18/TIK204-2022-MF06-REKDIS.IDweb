@@ -46,3 +46,15 @@ CREATE TABLE IF NOT EXISTS `dokter` (
 
 INSERT INTO `dokter` (`id`, `nama_dokter`, `alamat`, `telephone`, `spesialis`, `created_at`, `updated_at`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`) VALUES
 (1, 'Johan', 'Karawang', '0891234455', 'Hati', '2020-03-03 16:55:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `group_id`
+--
+
+CREATE TABLE IF NOT EXISTS `group_id` (
+`id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `definition` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
