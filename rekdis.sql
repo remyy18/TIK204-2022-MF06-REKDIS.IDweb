@@ -112,3 +112,35 @@ CREATE TABLE IF NOT EXISTS `pasien` (
 INSERT INTO `pasien` (`id`, `nomor_identitas`, `nama_pasien`, `jenis_kelamin`, `alamat`, `telephone`, `created_at`, `updated_at`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`) VALUES
 (1, '3215082394924', 'Siti', 'p', 'Karawang', '0989333333333', '2020-03-03 16:55:51', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 0, 0),
 (2, '3215082394923', 'Boi', 'l', 'Bekasi', '08561234567', '2020-03-03 16:56:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rekam_medis`
+--
+
+CREATE TABLE IF NOT EXISTS `rekam_medis` (
+`id` int(11) NOT NULL,
+  `pasien_id` int(11) NOT NULL,
+  `dokter_id` int(11) NOT NULL,
+  `ruang_id` int(11) NOT NULL,
+  `keluhan` text NOT NULL,
+  `diagnosa` text NOT NULL,
+  `tanggal` date NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `deleted_by` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rekam_medis`
+--
+
+INSERT INTO `rekam_medis` (`id`, `pasien_id`, `dokter_id`, `ruang_id`, `keluhan`, `diagnosa`, `tanggal`, `created_at`, `updated_at`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`) VALUES
+(7, 1, 1, 1, 'Demam', 'Demam', '2020-03-03', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
+(8, 1, 1, 1, 'Demam', 'Demam', '2020-03-02', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
+(9, 1, 1, 1, 'Demam', 'Demam', '2020-03-01', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
+(10, 1, 1, 1, 'Demam', 'Demam', '2020-03-04', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL);
