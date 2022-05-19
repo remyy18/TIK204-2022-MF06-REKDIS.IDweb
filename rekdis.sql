@@ -58,3 +58,21 @@ CREATE TABLE IF NOT EXISTS `group_id` (
   `name` varchar(128) NOT NULL,
   `definition` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `obat`
+--
+
+CREATE TABLE IF NOT EXISTS `obat` (
+`id` int(11) NOT NULL,
+  `nama_obat` varchar(128) NOT NULL,
+  `keterangan` text,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `deleted_by` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
