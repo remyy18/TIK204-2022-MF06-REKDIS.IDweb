@@ -144,3 +144,22 @@ INSERT INTO `rekam_medis` (`id`, `pasien_id`, `dokter_id`, `ruang_id`, `keluhan`
 (8, 1, 1, 1, 'Demam', 'Demam', '2020-03-02', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
 (9, 1, 1, 1, 'Demam', 'Demam', '2020-03-01', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
 (10, 1, 1, 1, 'Demam', 'Demam', '2020-03-04', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rm_obat`
+--
+
+CREATE TABLE IF NOT EXISTS `rm_obat` (
+`id` int(11) NOT NULL,
+  `obat_id` int(11) NOT NULL,
+  `rm_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rm_obat`
+--
+
+INSERT INTO `rm_obat` (`id`, `obat_id`, `rm_id`) VALUES
+(2, 1, 7);
