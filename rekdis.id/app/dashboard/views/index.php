@@ -10,6 +10,9 @@ $count_pasien = mysqli_num_rows($pasien);
 $obat = mysqli_query($conn, "SELECT * FROM obat");
 $count_obat = mysqli_num_rows($obat);
 
+$rekam_medis = mysqli_query($conn, "SELECT * FROM rekam_medis");
+$count_obat = mysqli_num_rows($rekam_medis);
+
 // $_SESSION['title'] s= 'Dashboard';
 ?>
 <!-- Dashboard Analytics Start -->
@@ -65,6 +68,24 @@ $count_obat = mysqli_num_rows($obat);
         </div>
       </div>
     </div>
+
+    <div class="col-lg-3 col-md-6 col-12">
+      <div class="card">
+        <div class="card-header d-flex flex-column align-items-start pb-0">
+          <div class="avatar bg-rgba-warning p-50 m-0">
+            <div class="avatar-content">
+              <i class="feather icon-book text-warning font-medium-5"></i>
+            </div>
+          </div>
+          <h2 class="text-bold-700 mt-1 mb-25"><?= $count_rekam_medis; ?></h2>
+          <p class="mb-0">Rekam Medis</p>
+        </div>
+        <div class="card-content">
+          <!-- <div id="rekam_medis-chart"></div> -->
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 <!-- Dashboard Analytics end -->
