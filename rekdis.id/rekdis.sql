@@ -123,7 +123,6 @@ CREATE TABLE IF NOT EXISTS `rekam_medis` (
 `id` int(11) NOT NULL,
   `pasien_id` int(11) NOT NULL,
   `dokter_id` int(11) NOT NULL,
-  `ruang_id` int(11) NOT NULL,
   `keluhan` text NOT NULL,
   `diagnosa` text NOT NULL,
   `tanggal` date NOT NULL,
@@ -139,11 +138,11 @@ CREATE TABLE IF NOT EXISTS `rekam_medis` (
 -- Dumping data for table `rekam_medis`
 --
 
-INSERT INTO `rekam_medis` (`id`, `pasien_id`, `dokter_id`, `ruang_id`, `keluhan`, `diagnosa`, `tanggal`, `created_at`, `updated_at`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`) VALUES
-(7, 1, 1, 1, 'Demam', 'Demam', '2020-03-03', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
-(8, 1, 1, 1, 'Demam', 'Demam', '2020-03-02', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
-(9, 1, 1, 1, 'Demam', 'Demam', '2020-03-01', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
-(10, 1, 1, 1, 'Demam', 'Demam', '2020-03-04', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `rekam_medis` (`id`, `pasien_id`, `dokter_id`, `keluhan`, `diagnosa`, `tanggal`, `created_at`, `updated_at`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`) VALUES
+(7, 1, 1, 'Demam', 'Demam', '2020-03-03', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
+(8, 1, 1, 'Demam', 'Demam', '2020-03-02', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
+(9, 1, 1, 'Demam', 'Demam', '2020-03-01', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL),
+(10, 1, 1, 'Demam', 'Demam', '2020-03-04', '2020-03-03 23:10:31', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,30 +164,6 @@ INSERT INTO `rm_obat` (`id`, `obat_id`, `rm_id`) VALUES
 (2, 1, 7);
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `ruang`
---
-
-CREATE TABLE IF NOT EXISTS `ruang` (
-`id` int(11) NOT NULL,
-  `nama_ruang` varchar(128) NOT NULL,
-  `keterangan` text,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  `deleted_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_by` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `ruang`
---
-
-INSERT INTO `ruang` (`id`, `nama_ruang`, `keterangan`, `created_at`, `updated_at`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`) VALUES
-(1, 'Melati 01', 'Lantai 1', '2020-03-03 16:57:35', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 0, 0),
-(2, 'Melati 02', 'Lantai 1', '2020-03-03 16:57:44', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -244,19 +219,13 @@ ALTER TABLE `pasien`
 -- Indexes for table `rekam_medis`
 --
 ALTER TABLE `rekam_medis`
- ADD PRIMARY KEY (`id`), ADD KEY `dokter_id` (`dokter_id`), ADD KEY `ruang_id` (`ruang_id`), ADD KEY `pasien_id` (`pasien_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `dokter_id` (`dokter_id`), ADD KEY `pasien_id` (`pasien_id`);
 
 --
 -- Indexes for table `rm_obat`
 --
 ALTER TABLE `rm_obat`
  ADD PRIMARY KEY (`id`), ADD KEY `obat_id` (`obat_id`), ADD KEY `rm_id` (`rm_id`);
-
---
--- Indexes for table `ruang`
---
-ALTER TABLE `ruang`
- ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -299,11 +268,6 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 ALTER TABLE `rm_obat`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `ruang`
---
-ALTER TABLE `ruang`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -317,7 +281,6 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 ALTER TABLE `rekam_medis`
 ADD CONSTRAINT `rekam_medis_ibfk_2` FOREIGN KEY (`dokter_id`) REFERENCES `dokter` (`id`),
-ADD CONSTRAINT `rekam_medis_ibfk_3` FOREIGN KEY (`ruang_id`) REFERENCES `ruang` (`id`),
 ADD CONSTRAINT `rekam_medis_ibfk_4` FOREIGN KEY (`pasien_id`) REFERENCES `pasien` (`id`);
 
 --
