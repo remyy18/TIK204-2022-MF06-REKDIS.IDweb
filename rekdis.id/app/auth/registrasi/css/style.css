@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, input, button {
+    font-family: Poppins, sans-serif;
+}
+
+.registrasi {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gambar {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.gambar img {
+    width: 100%;
+}
+
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+form span {
+    border: 1px solid rgb(134, 134, 134);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+form span i {
+    color: rgb(134, 134, 134);
+}
+form input {
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 4px;
+    font-size: 1rem;
+}
+form button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    background-color: #6DAFA7;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    box-shadow: 2px 2px 8px 0px #4d7c77;
+    transition: 0.3s;
+}
+form button:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 450px) {
+    .gambar {
+        display: none;
+    }
+    .registrasi {
+        width: 100%;
+    }
+    form {
+        width: 80%;
+    }
+}
