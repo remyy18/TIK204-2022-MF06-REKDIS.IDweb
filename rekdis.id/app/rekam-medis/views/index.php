@@ -29,6 +29,7 @@ $title = 'rekam_medis';
                     <th></th>
                     <th>Tanggal Periksa</th>
                     <th>Nama Pasien</th>
+                    <th>NIK</th>
                     <th>Keluhan</th>
                     <th>Nama Dokter</th>
                     <th>Diagnosa</th>
@@ -44,6 +45,7 @@ $title = 'rekam_medis';
                       <td><?= $no++ ?></td>
                       <td><?= $rm['tanggal']; ?></td>
                       <td><?= $rm['nama_pasien']; ?></td>
+                      <td><?= $rm['nomor_identitas']; ?></td>
                       <td><?= $rm['keluhan']; ?></td>
                       <td><?= $rm['nama_dokter']; ?></td>
                       <td><?= $rm['diagnosa']; ?></td>
