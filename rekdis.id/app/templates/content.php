@@ -38,18 +38,6 @@ if (isset($_GET['page'])) {
 		case 'hapus-obat':
 			require_once 'app/obat/proses/delete.php';
 			break;
-		case 'ruang':
-			require_once 'app/ruang/views/index.php';
-			break;
-		case 'tambah-ruang':
-			require_once 'app/ruang/views/create.php';
-			break;
-		case 'edit-ruang':
-			require_once 'app/ruang/views/edit.php';
-			break;
-		case 'hapus-ruang':
-			require_once 'app/ruang/proses/delete.php';
-			break;
 		case 'rekam-medis':
 			require_once 'app/rekam-medis/views/index.php';
 			break;

@@ -3,7 +3,6 @@ require_once 'app/functions/MY_model.php';
 
 $pasiens = get("SELECT * FROM pasien");
 $dokters = get("SELECT * FROM dokter");
-$ruangs = get("SELECT * FROM ruang");
 $obats = get("SELECT * FROM obat");
 ?>
 
@@ -91,22 +90,7 @@ $obats = get("SELECT * FROM obat");
                       </div>
                     </div>
                   </div>
-
-                  <div class="col-12">
-                    <div class="form-group row">
-                      <div class="col-md-4">
-                        <label>Ruang</label>
-                      </div>
-                      <div class="col-md-8">
-                        <select class="select2 form-control" name="ruang_id" required>
-                          <?php foreach ($ruangs as $ruang) : ?>
-                            <option value="<?= $ruang['id']; ?>"><?= $ruang['nama_ruang']; ?></option>
-                          <?php endforeach; ?>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
+                  
                   <div class="col-12">
                     <div class="form-group row">
                       <div class="col-md-4">

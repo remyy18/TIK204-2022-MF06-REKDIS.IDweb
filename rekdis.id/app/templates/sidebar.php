@@ -25,9 +25,6 @@
       <li class="<?php echo is_active('pasien'); ?> nav-item"><a href="?page=pasien"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Pasien">Pasien</span></a>
       </li>
 
-      <li class="<?php echo is_active('ruang'); ?> nav-item"><a href="?page=ruang"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Ruang">Ruang</span></a>
-      </li>
-
       <li class="<?php echo is_active('obat'); ?> nav-item"><a href="?page=obat"><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Obat">Obat</span></a>
       </li>
 

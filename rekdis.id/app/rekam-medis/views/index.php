@@ -2,8 +2,7 @@
 require_once 'app/functions/MY_model.php';
 $rekam_medis = get("SELECT *, rm.id as rm_id FROM rekam_medis rm
                     INNER JOIN pasien ON rm.pasien_id = pasien.id 
-                    INNER JOIN dokter ON rm.dokter_id = dokter.id 
-                    INNER JOIN ruang ON rm.ruang_id = ruang.id");
+                    INNER JOIN dokter ON rm.dokter_id = dokter.id");
 
 $no = 1;
 
@@ -34,7 +33,6 @@ $title = 'rekam_medis';
                     <th>Nama Dokter</th>
                     <th>Diagnosa</th>
                     <th>Nama Obat</th>
-                    <th>Ruang</th>
                     <th>
                       <i class="feather icon-settings"></i>
                     </th>
@@ -57,7 +55,6 @@ $title = 'rekam_medis';
                         }
                         ?>
                       </td>
-                      <td><?= $rm['nama_ruang']; ?></td>
                       <td>
                         <a href="?page=hapus-rekam-medis&id=<?= $rm['rm_id']; ?>" class="btn-hapus"><i class="feather icon-trash"></i></a>
                       </td>
