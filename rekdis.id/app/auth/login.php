@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require_once '../functions/MY_model.php';
 require_once '../functions/config.php';
@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
     }
   }
 }
-?>
+?> -->
 
 
 <!DOCTYPE html>
@@ -66,6 +66,77 @@ if (isset($_POST['login'])) {
   <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
   <!-- END: Custom CSS-->
 
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, input, button {
+    font-family: Poppins, sans-serif;
+}
+.content {
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputan {
+  width: 100%;
+}
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+form span {
+    border: 1px solid rgb(134, 134, 134);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+form span i {
+    color: rgb(134, 134, 134);
+}
+form input {
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 4px;
+    font-size: 1rem;
+}
+form button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    background-color: #6DAFA7;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    box-shadow: 2px 2px 8px 0px #4d7c77;
+    transition: 0.3s;
+}
+form button:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 450px) {
+    .gambar {
+        display: none;
+    }
+    .registrasi {
+        width: 100%;
+    }
+    form {
+        width: 80%;
+    }
+}
+  </style>
 </head>
 <!-- END: Head-->
 
@@ -81,18 +152,18 @@ if (isset($_POST['login'])) {
         <section class="row flexbox-container">
           <div class="col-xl-8 col-11 d-flex justify-content-center">
             <div class="card bg-authentication rounded-0 mb-0">
-              <div class="row m-0">
+              <div class="row m-0 content">
                 <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
-                  <img src="../../assets/images/pages/login.png" alt="branding logo">
+                  <img src="assets/y.png" alt="branding logo" width="600">
                 </div>
                 <div class="col-lg-6 col-12 p-0">
-                  <div class="card rounded-0 mb-0 px-2">
+                  <div class="card rounded-0 mb-0 px-2 inputan">
                     <div class="card-header pb-1">
                       <div class="card-title">
-                        <h4 class="mb-0">Login</h4>
+                        <h4 class="mb-0" style="margin-bottom: 18px;font-size:26px">Login</h4>
                       </div>
                     </div>
-                    <p class="px-2">Selamat datang di REKDIS.ID</p>
+                    <p class="px-2" style="margin-bottom: 10px;">Selamat datang di REKDIS.ID</p>
                     <div class="card-content">
                       <div class="card-body pt-1">
                         <form action="" method="post">
@@ -101,7 +172,6 @@ if (isset($_POST['login'])) {
                             <div class="form-control-position">
                               <i class="feather icon-user"></i>
                             </div>
-                            <label for="user-name">Username</label>
                           </fieldset>
 
                           <fieldset class="form-label-group position-relative has-icon-left">
@@ -109,7 +179,6 @@ if (isset($_POST['login'])) {
                             <div class="form-control-position">
                               <i class="feather icon-lock"></i>
                             </div>
-                            <label for="user-password">Password</label>
                           </fieldset>
                           <!-- <a href="auth-register.html" class="btn btn-outline-primary float-left btn-inline">Register</a> -->
                           <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
