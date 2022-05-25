@@ -44,7 +44,7 @@ if (!isset($_SESSION['user'])) {
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
 
   <?php require_once 'sidebar.php' ?>
 
